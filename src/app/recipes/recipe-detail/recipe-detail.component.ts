@@ -31,7 +31,8 @@ export class RecipeDetailComponent implements OnInit {
      // this.recipeService.addIngredientsToShoppingList(recipe.ingredients);
   }
 
-  onEditRecipe(){
-    this.router.navigate(['edit'], {relativeTo: this.route});
-  }
+  // onEditRecipe(){
+  //   this.router.navigate(['edit'], {relativeTo: this.route});
+  //this.router.navigate('../', this.id, 'edit'], {relativeTo:this.route})
+  // } if we want to use click-listener
 }

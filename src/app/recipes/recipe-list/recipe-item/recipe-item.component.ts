@@ -10,15 +10,16 @@ import {Recipe} from '../../recipe.model';
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
   //@Output() recipeSelected = new EventEmitter<Recipe>();
-
-    constructor(private recipeService:RecipesService) { }
-
-        
-  onRecipeSelected(recipe: Recipe){
-          this.recipeService.recipeSelected.emit(this.recipe);
-      }
-
+  @Input() index: number;
+  
   ngOnInit() {
   }
 
 }
+
+
+
+  // onRecipeSelected(recipe: Recipe){
+  //         this.recipeService.recipeSelected.emit(this.recipe);
+  //     }
+

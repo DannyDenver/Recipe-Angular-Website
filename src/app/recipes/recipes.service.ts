@@ -26,6 +26,9 @@ new Recipe("Pizza Pie", "This is simply a test","https://www.meals.com/imagesrec
     getRecipes(){
         return this.recipes.slice(); /// get exact copy 
     }; 
+    getRecipe(index: number){
+        return this.recipes.slice()[index];
+    }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]){
         this.slService.addIngredients(ingredients);

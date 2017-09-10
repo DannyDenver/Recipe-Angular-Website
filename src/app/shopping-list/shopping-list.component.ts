@@ -32,4 +32,8 @@ ngOnDestroy(){
   this.subscription.unsubscribe(); // prevent memory leak 
 }
 
+onEditItem(index: number){
+  this.shoppingListService.startedEditing.next(index);
+}
+
 }

@@ -7,14 +7,15 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { NgModule } from '@angular/core';
 import{ Routes, RouterModule }from '@angular/router';
+import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full'}, // always redirects prefix matching strategy 
     { path: 'recipes', component: RecipesComponent, children: [
         {path: '', component: RecipeStartComponent},
-        { path: 'new', component: RecipesEditComponent }, /// must be before :id
+        { path: 'new', component: RecipesEditComponent, canActivate: [AuthGuard] }, /// must be before :id
         {path: ':id', component: RecipeDetailComponent},
-        { path: ':id/edit', component: RecipesEditComponent },
+        { path: ':id/edit', component: RecipesEditComponent, canActivate: [AuthGuard] },
     ]},
     { path: 'shopping-list', component: ShoppingListComponent},
     { path: 'signup', component: SignupComponent },

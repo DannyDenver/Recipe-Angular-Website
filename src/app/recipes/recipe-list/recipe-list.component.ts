@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RecipesService } from './../recipes.service';
@@ -16,7 +17,8 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
     constructor(private recipeService: RecipesService, 
                 private router: Router, 
-                private route: ActivatedRoute) { }
+                private route: ActivatedRoute,
+                private authService: AuthService) { }
 
 // onRecipeSelected(recipe: Recipe){
 //   this.recipeWasSelected.emit(recipe);
@@ -28,8 +30,13 @@ export class RecipeListComponent implements OnInit, OnDestroy {
     })
     this.recipes = this.recipeService.getRecipes();
   }
-  onNewRecipe(){ 
-    this.router.navigate(['new'], { relativeTo: this.route}) //relative route, already in recipes
+  onNewRecipe(){    
+
+    if(this.authService.isAuthenticated()){
+        this.router.navigate(['new'], { relativeTo: this.route}) //relative route, already in recipes
+    }else{
+      this.router.navigate(['/signup']);
+    }
   }
   ngOnDestroy(){
     this.subscription.unsubscribe;

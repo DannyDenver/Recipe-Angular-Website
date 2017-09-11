@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
-    @Injectable() // allows injecting other services
+@Injectable() // allows injecting other services
 export class AuthService{
     token: string;
 

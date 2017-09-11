@@ -1,3 +1,4 @@
+import { DataStorageService } from './../shared/data-storage.service';
 import { Subject } from 'rxjs/Subject';
 import { ShoppingListService } from './../shopping-list/shopping-list.service';
 import { Ingredient } from './../shared/ingredient.model';
@@ -24,6 +25,11 @@ new Recipe("Pizza Pie", "Probably not good for lactose intolerant people. ","htt
      new Ingredient("Dough", 1),
      new Ingredient("Pasta Sauce", 1)
  ] )];
+
+    setRecipes(recipes: Recipe[]){
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
  
     getRecipes(){
         return this.recipes.slice(); /// get exact copy 

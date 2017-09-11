@@ -1,3 +1,5 @@
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { DataStorageService } from './shared/data-storage.service';
 import { RecipesService } from './recipes/recipes.service';
 import { Component } from '@angular/core';
 
@@ -5,7 +7,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RecipesService]
+  providers: [RecipesService, DataStorageService]
 
 })
 export class AppComponent {

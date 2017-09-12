@@ -36,9 +36,7 @@ export class RecipeDetailComponent implements OnInit {
         this.router.navigate(['/recipes'], { relativeTo: this.route}) //relative route, already in recipes
       }
     }
-
-  // onEditRecipe(){
-  //   this.router.navigate(['edit'], {relativeTo: this.route});
-  //this.router.navigate('../', this.id, 'edit'], {relativeTo:this.route})
-  // } if we want to use click-listener
+      onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+  }
 }

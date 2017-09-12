@@ -1,4 +1,3 @@
-import { AuthGuard } from './../auth/auth-guard.service';
 import { AuthService } from './../auth/auth.service';
 import { DataStorageService } from './../shared/data-storage.service';
 import { RecipesService } from './../recipes/recipes.service';
@@ -24,7 +23,7 @@ import { NgModule } from '@angular/core';
         HeaderComponent
     ],
 
-    providers: [ShoppingListService, RecipesService, DataStorageService, AuthService, AuthGuard]
+    providers: [ShoppingListService, RecipesService, DataStorageService, AuthService ]
     
 })
 export class CoreModule{

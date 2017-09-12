@@ -1,9 +1,8 @@
 import { Router } from '@angular/router';
-import { AuthService } from './../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { Response } from '@angular/http';
-import { DataStorageService } from './../shared/data-storage.service';
-import { RecipesService } from './../recipes/recipes.service';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { DataStorageService } from '../../shared/data-storage.service';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-header',

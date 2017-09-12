@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
         DropDownDirective
     ]
 })
-export class SharedModule{
+export class SharedModule{}
 
-}
+// never provide services on shared module
+// especially if you plan to use them on lazy load modules

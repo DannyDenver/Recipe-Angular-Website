@@ -8,10 +8,10 @@ import { Routes,RouterModule } from '@angular/router';
 
 
 const recipesRoutes: Routes = [
- { path: 'recipes', component: RecipesComponent, children: [
-        {path: '', component: RecipeStartComponent},
+        { path: '', component: RecipesComponent, children: [
+        { path: '', component: RecipeStartComponent},
         { path: 'new', component: RecipesEditComponent, canActivate: [AuthGuard] }, /// must be before :id
-        {path: ':id', component: RecipeDetailComponent},
+        { path: ':id', component: RecipeDetailComponent},
         { path: ':id/edit', component: RecipesEditComponent, canActivate: [AuthGuard] },
     ]},
     

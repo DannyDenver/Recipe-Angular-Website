@@ -1,9 +1,10 @@
+//import { RecipesModule } from './recipes/recipes.module';
+import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthModule } from './auth/auth.module';
 import { RecipesRoutingModule } from './recipes/recipe-routing.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
-import { RecipesModule } from './recipes/recipes.module';
 import { AuthService } from './auth/auth.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { RecipesService } from './recipes/recipes.service';
@@ -23,19 +24,19 @@ import { SigninComponent } from './auth/signin/signin.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, ///all features of common module  
     HttpModule,
     AppRoutingModule,
-    RecipesModule,
     ShoppingListModule,
     SharedModule,
+    //RecipesModule,
     FormsModule,
     AuthModule
     //RecipesRoutingModule
-
   ],
   providers: [ShoppingListService, RecipesService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

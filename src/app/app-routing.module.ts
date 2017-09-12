@@ -5,7 +5,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { NgModule } from '@angular/core';
-import{ Routes, RouterModule } from '@angular/router';
+import{ Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
@@ -16,7 +16,7 @@ const appRoutes: Routes = [
  ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules })], // preloading lazy loaded routes
     exports: [RouterModule]
 }) // transform into Angular module
 export class AppRoutingModule{

@@ -26,17 +26,18 @@ export class RecipeDetailComponent implements OnInit {
       })
   }
 
-  onAddToShoppingList(recipe: Recipe){
+  onAddToShoppingList(){
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients)
      // this.recipeService.addIngredientsToShoppingList(recipe.ingredients);
   }
-    onDeleteRecipe(){
+  onDeleteRecipe(){
       if(confirm("Are you sure you would like to delete this recipe?")){
         this.recipeService.deleteRecipe(this.id);
-        this.router.navigate(['/recipes'], { relativeTo: this.route}) //relative route, already in recipes
+        this.router.navigate(['/recipes']) //relative route, already in recipes
       }
     }
-      onEditRecipe() {
+    
+ onEditRecipe() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
 }

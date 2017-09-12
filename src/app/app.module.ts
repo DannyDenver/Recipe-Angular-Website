@@ -1,15 +1,9 @@
 import { CoreModule } from './core/core.module';
-//import { RecipesModule } from './recipes/recipes.module';
-import { AuthGuard } from './auth/auth-guard.service';
 import { AuthModule } from './auth/auth.module';
 import { RecipesRoutingModule } from './recipes/recipe-routing.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthService } from './auth/auth.service';
-import { DataStorageService } from './shared/data-storage.service';
-import { RecipesService } from './recipes/recipes.service';
 import { AppRoutingModule } from './app-routing.module';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -34,7 +28,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     AuthModule,
     CoreModule
   ],
-  providers: [ShoppingListService, RecipesService, DataStorageService, AuthService, AuthGuard],
+  providers: [], // in core module
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,14 +10,7 @@ import{ Routes, RouterModule }from '@angular/router';
 import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/recipes', pathMatch: 'full'}, // always redirects prefix matching strategy 
-    { path: 'recipes', component: RecipesComponent, children: [
-        {path: '', component: RecipeStartComponent},
-        { path: 'new', component: RecipesEditComponent, canActivate: [AuthGuard] }, /// must be before :id
-        {path: ':id', component: RecipeDetailComponent},
-        { path: ':id/edit', component: RecipesEditComponent, canActivate: [AuthGuard] },
-    ]},
-    { path: 'shopping-list', component: ShoppingListComponent},
+    { path: '', redirectTo: '/recipes', pathMatch: 'full'}, // always redirects prefix matching strategy    
     { path: 'signup', component: SignupComponent },
     { path: 'signin', component: SigninComponent}
 ]
